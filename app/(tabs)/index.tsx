@@ -1,3 +1,4 @@
+import CategoryButtons from "@/components/category-buttons";
 import { Ionicons } from "@expo/vector-icons";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Stack } from "expo-router";
@@ -69,6 +70,7 @@ export default function Page() {
             <Ionicons name="options" size={28} color={Colors.white} />
           </TouchableOpacity>
         </View>
+        <CategoryButtons />
       </View>
     </>
   );
