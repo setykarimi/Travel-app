@@ -37,19 +37,7 @@ export default function Page() {
             </TouchableOpacity>
           ),
           headerRight: () => (
-            <TouchableOpacity
-              onPress={() => {}}
-              style={{
-                marginRight: 20,
-                backgroundColor: Colors.white,
-                padding: 10,
-                borderRadius: 10,
-                shadowColor: "#171717",
-                shadowOffset: { width: 2, height: 2 },
-                shadowOpacity: 0.2,
-                shadowRadius: 3,
-              }}
-            >
+            <TouchableOpacity onPress={() => {}} style={styles.headerRight}>
               <Ionicons name="notifications" size={20} color={Colors.black} />
             </TouchableOpacity>
           ),
@@ -104,5 +92,15 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 10,
     marginLeft: 20,
+  },
+  headerRight: {
+    marginRight: 20,
+    backgroundColor: Colors.white,
+    padding: 10,
+    borderRadius: 10,
+    shadowColor: "#171717",
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
 });
