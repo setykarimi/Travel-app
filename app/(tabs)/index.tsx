@@ -2,7 +2,7 @@ import CategoryButtons from "@/components/category-buttons";
 import { Ionicons } from "@expo/vector-icons";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Stack } from "expo-router";
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   StyleSheet,
@@ -15,6 +15,11 @@ import Colors from "../constants/Colors";
 
 export default function Page() {
   const headerHeight = useHeaderHeight();
+  const [category, setCategory] = useState("");
+
+  const onCatChanged = (category: string) => {
+    setCategory(category);
+  };
 
   return (
     <>
@@ -58,7 +63,7 @@ export default function Page() {
             <Ionicons name="options" size={28} color={Colors.white} />
           </TouchableOpacity>
         </View>
-        <CategoryButtons />
+        <CategoryButtons onCategoryChanged={onCatChanged} />
       </View>
     </>
   );
