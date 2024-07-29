@@ -10,7 +10,11 @@ import {
   View,
 } from "react-native";
 
-export default function CategoryButtons() {
+type Props = {
+  onCategoryChanged: (cat: string) => void;
+};
+
+export default function CategoryButtons({ onCategoryChanged }: Props) {
   const scrollRef = useRef<ScrollView>(null);
   const itemRef = useRef<TouchableOpacity[] | null[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -22,6 +26,8 @@ export default function CategoryButtons() {
     selected?.measure((x) =>
       scrollRef.current?.scrollTo({ x: x, y: 0, animated: true })
     );
+
+    onCategoryChanged(destinationCategories[index].title)
   };
   return (
     <View>
@@ -40,7 +46,7 @@ export default function CategoryButtons() {
           console.log(isActive);
           console.log(activeIndex);
           console.log(index);
-          
+
           return (
             <TouchableOpacity
               ref={(el) => (itemRef.current[index] = el)}
