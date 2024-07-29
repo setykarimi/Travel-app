@@ -12,6 +12,7 @@ import {
   View,
 } from "react-native";
 import Colors from "../constants/Colors";
+import Listing from "@/components/listing";
 
 export default function Page() {
   const headerHeight = useHeaderHeight();
@@ -64,6 +65,7 @@ export default function Page() {
           </TouchableOpacity>
         </View>
         <CategoryButtons onCategoryChanged={onCatChanged} />
+        <Listing />
       </View>
     </>
   );
