@@ -1,4 +1,4 @@
-import Colors from "@/app/constants/Colors";
+import Colors from "@/constants/Colors";
 import { ListingType } from "@/types/listing-type";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import React from "react";

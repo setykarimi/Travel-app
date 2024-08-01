@@ -1,4 +1,4 @@
-import Colors from "@/app/constants/Colors";
+import Colors from "@/constants/Colors";
 import destinationCategories from "@/data/categories";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useRef, useState } from "react";
