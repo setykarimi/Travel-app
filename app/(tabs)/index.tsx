@@ -1,4 +1,9 @@
 import CategoryButtons from "@/components/category-buttons";
+import GroupListing from "@/components/group-listing";
+import Listing from "@/components/listing";
+import Colors from "@/constants/Colors";
+import listingData from "@/data/destinations.json";
+import groupData from "@/data/groups.json";
 import { Ionicons } from "@expo/vector-icons";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Stack } from "expo-router";
@@ -11,9 +16,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Colors from "../../constants/Colors";
-import Listing from "@/components/listing";
-import listingData from "../../data/destinations.json";
 
 export default function Page() {
   const headerHeight = useHeaderHeight();
@@ -66,7 +68,8 @@ export default function Page() {
           </TouchableOpacity>
         </View>
         <CategoryButtons onCategoryChanged={onCatChanged} />
-        <Listing listings={listingData} category={category}/>
+        <Listing listings={listingData} category={category} />
+        <GroupListing listings={groupData} />
       </View>
     </>
   );
