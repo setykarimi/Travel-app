@@ -66,7 +66,7 @@ export default function Page() {
           </TouchableOpacity>
         </View>
         <CategoryButtons onCategoryChanged={onCatChanged} />
-        <Listing listings={listingData}/>
+        <Listing listings={listingData} category={category}/>
       </View>
     </>
   );
