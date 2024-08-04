@@ -10,6 +10,7 @@ import { Stack } from "expo-router";
 import React, { useState } from "react";
 import {
   Image,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -53,23 +54,25 @@ export default function Page() {
         }}
       />
       <View style={[styles.container, { padding: headerHeight }]}>
-        <Text style={styles.headingText}>Explore The beautiful World!</Text>
-        <View style={styles.searchSectionWrapper}>
-          <View style={styles.searchBar}>
-            <Ionicons
-              name="search"
-              size={18}
-              style={{ marginRight: 5, color: Colors.black }}
-            />
-            <TextInput placeholder="Search ..." />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text style={styles.headingText}>Explore The beautiful World!</Text>
+          <View style={styles.searchSectionWrapper}>
+            <View style={styles.searchBar}>
+              <Ionicons
+                name="search"
+                size={18}
+                style={{ marginRight: 5, color: Colors.black }}
+              />
+              <TextInput placeholder="Search ..." />
+            </View>
+            <TouchableOpacity onPress={() => {}} style={styles.filterBtn}>
+              <Ionicons name="options" size={28} color={Colors.white} />
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity onPress={() => {}} style={styles.filterBtn}>
-            <Ionicons name="options" size={28} color={Colors.white} />
-          </TouchableOpacity>
-        </View>
-        <CategoryButtons onCategoryChanged={onCatChanged} />
-        <Listing listings={listingData} category={category} />
-        <GroupListing listings={groupData} />
+          <CategoryButtons onCategoryChanged={onCatChanged} />
+          <Listing listings={listingData} category={category} />
+          <GroupListing listings={groupData} />
+        </ScrollView>
       </View>
     </>
   );
