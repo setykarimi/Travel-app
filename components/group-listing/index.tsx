@@ -9,6 +9,7 @@ export default function GroupListing({ listings }: { listings: GroupType[] }) {
     <View style={{ marginVertical: 20 }}>
       <Text style={styles.title}>Top Travel Groups</Text>
       <FlatList
+        horizontal
         data={listings}
         renderItem={GroupItem}
         showsHorizontalScrollIndicator={false}
