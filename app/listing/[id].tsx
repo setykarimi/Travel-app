@@ -1,7 +1,12 @@
 import Colors from "@/constants/Colors";
 import listingData from "@/data/destinations.json";
 import { ListingType } from "@/types/listing-type";
-import { Feather, FontAwesome5, Ionicons } from "@expo/vector-icons";
+import {
+  Feather,
+  FontAwesome,
+  FontAwesome5,
+  Ionicons,
+} from "@expo/vector-icons";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import React from "react";
 import {
@@ -82,6 +87,44 @@ export default function ListingDetails() {
             />
             <Text style={styles.lisitingLocationTxt}>{listing.location}</Text>
           </View>
+
+          <View style={styles.highlightWrapper}>
+            <View style={{ flexDirection: "row" }}>
+              <View style={styles.highlightIcon}>
+                <Ionicons name="time" size={18} color={Colors.primaryColor} />
+              </View>
+              <View>
+                <Text style={styles.highlightTxt}>Duration</Text>
+                <Text style={styles.highlightTxtValue}>
+                  {listing.duration} days
+                </Text>
+              </View>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <View style={styles.highlightIcon}>
+                <FontAwesome
+                  name="users"
+                  size={18}
+                  color={Colors.primaryColor}
+                />
+              </View>
+              <View>
+                <Text style={styles.highlightTxt}>Person</Text>
+                <Text style={styles.highlightTxtValue}>{listing.duration}</Text>
+              </View>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <View style={styles.highlightIcon}>
+                <Ionicons name="star" size={18} color={Colors.primaryColor} />
+              </View>
+              <View>
+                <Text style={styles.highlightTxt}>Rating</Text>
+                <Text style={styles.highlightTxtValue}>{listing.rating}</Text>
+              </View>
+            </View>
+          </View>
+
+          <Text style={styles.listingDetails}>{listing.description}</Text>
         </View>
       </View>
     </>
@@ -94,27 +137,54 @@ const styles = StyleSheet.create({
     height: IMG_HEIGHT,
   },
   container: {
-    flex:1,
-    backgroundColor: Colors.white
+    flex: 1,
+    backgroundColor: Colors.white,
   },
   contentWrapper: {
-    padding:20
+    padding: 20,
   },
-  listingName:{
-    fontSize:24,
-    fontWeight:'500',
+  listingName: {
+    fontSize: 24,
+    fontWeight: "500",
     color: Colors.black,
-    letterSpacing:0.5
+    letterSpacing: 0.5,
   },
-  listingLocationWrapper:{
-    flexDirection: 'row',
-    marginTop:5,
-    marginBottom:10,
-    alignItems:'center'
+  listingLocationWrapper: {
+    flexDirection: "row",
+    marginTop: 5,
+    marginBottom: 10,
+    alignItems: "center",
   },
-  lisitingLocationTxt:{
-    fontSize:14,
-    marginLeft:5,
-    color: Colors.black
-  }
+  lisitingLocationTxt: {
+    fontSize: 14,
+    marginLeft: 5,
+    color: Colors.black,
+  },
+  highlightWrapper: {
+    flexDirection: "row",
+    marginVertical: 20,
+    justifyContent: "space-between",
+  },
+  highlightIcon: {
+    backgroundColor: "#F4F4F4",
+    paddingHorizontal: 8,
+    paddingVertical: 5,
+    borderRadius: 8,
+    marginRight: 5,
+    alignItems: "center",
+  },
+  highlightTxt: {
+    fontSize: 12,
+    color: "#999",
+  },
+  highlightTxtValue: {
+    fontSize: 14,
+    fontWeight: "600",
+  },
+  listingDetails: {
+    fontSize: 16,
+    color: Colors.black,
+    lineHeight: 25,
+    letterSpacing: 0.5,
+  },
 });
