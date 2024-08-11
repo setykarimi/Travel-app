@@ -53,8 +53,8 @@ export default function Page() {
           ),
         }}
       />
-      <View style={[styles.container, { padding: headerHeight }]}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
+        <View style={[styles.container, { padding: headerHeight }]}>
           <Text style={styles.headingText}>Explore The beautiful World!</Text>
           <View style={styles.searchSectionWrapper}>
             <View style={styles.searchBar}>
@@ -72,8 +72,8 @@ export default function Page() {
           <CategoryButtons onCategoryChanged={onCatChanged} />
           <Listing listings={listingData} category={category} />
           <GroupListing listings={groupData} />
-        </ScrollView>
-      </View>
+        </View>
+      </ScrollView>
     </>
   );
 }
