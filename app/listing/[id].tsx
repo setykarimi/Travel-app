@@ -70,13 +70,14 @@ export default function ListingDetails() {
               style={{
                 backgroundColor: "rgba(255,255,255,0.5)",
                 padding: 4,
+                borderRadius: 10,
               }}
             >
               <View
                 style={{
                   backgroundColor: Colors.white,
                   padding: 6,
-                  borderRadius: 10,
+                  borderRadius: 8,
                 }}
               >
                 <Feather name="arrow-left" size={20} />
@@ -89,13 +90,14 @@ export default function ListingDetails() {
               style={{
                 backgroundColor: "rgba(255,255,255,0.5)",
                 padding: 4,
+                borderRadius: 10,
               }}
             >
               <View
                 style={{
                   backgroundColor: Colors.white,
                   padding: 6,
-                  borderRadius: 10,
+                  borderRadius: 8,
                 }}
               >
                 <Ionicons name="bookmark-outline" size={20} />
