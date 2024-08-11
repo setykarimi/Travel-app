@@ -17,7 +17,10 @@ const ListItem: ListRenderItem<ListingType> = ({ item }) => {
     <Link href={`/listing/${item.id}`} asChild>
       <TouchableOpacity>
         <View style={styles.item}>
-          <Image source={{ uri: item.image }} style={styles.image} />
+          {/* <Image source={{ uri: item.image }} style={styles.image} /> */}
+          <Image   source={{
+                  uri: "https://xsgames.co/randomusers/avatar.php?g=female",
+                }} />
           <View style={styles.bookmark}>
             <Ionicons name="bookmark-outline" size={20} color={Colors.white} />
           </View>
